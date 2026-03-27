@@ -19,41 +19,7 @@ All data lives in a single JSON file (`src/data/db.json`) that acts as your data
 
 For features that would normally need a real API (AI calls, file uploads, payments, etc.), create mock services in `src/services/` that return realistic hardcoded data after a `delay()`. Swap these stubs for real API calls later without touching your UI code.
 
-## Getting Started
-
-```bash
-npm install
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run lint     # Type check + ESLint
-```
-
-## Adding Data
-
-1. Add seed records to `src/data/db.json` as a top-level array
-2. Create a React Query hook in `src/hooks/` using the `mock-db` CRUD functions (`getAll`, `getById`, `query`, `create`, `update`, `remove`)
-3. Add types inline or as Zod schemas in `src/schemas/`
-
-## File Organization
-
-```
-src/
-├── data/db.json       ← Seed data (the database)
-├── lib/mock-db.ts     ← CRUD engine
-├── hooks/             ← React Query hooks per domain
-├── services/          ← Mock API services
-├── schemas/           ← Zod validation schemas
-├── components/        ← UI components (shadcn/ui + custom)
-├── pages/             ← Route pages
-├── layouts/           ← Layout wrappers
-└── types/             ← TypeScript type definitions
-```
-
-## Resetting Data
-
-Call `resetDb()` from `src/lib/mock-db.ts` to wipe localStorage and re-seed from `db.json`.
-
-## Windows Setup Guide
+## Getting Started -Windows Setup Guide
 
 ### 1. Install Node.js
 
@@ -92,6 +58,35 @@ npm run dev
 ```
 
 The dev server will start and print a local URL (typically `http://localhost:5173`). Open that URL in your browser to see the app.
+---
+
+
+## Adding Data
+
+1. Add seed records to `src/data/db.json` as a top-level array
+2. Create a React Query hook in `src/hooks/` using the `mock-db` CRUD functions (`getAll`, `getById`, `query`, `create`, `update`, `remove`)
+3. Add types inline or as Zod schemas in `src/schemas/`
+
+## File Organization
+
+```
+src/
+├── data/db.json       ← Seed data (the database)
+├── lib/mock-db.ts     ← CRUD engine
+├── hooks/             ← React Query hooks per domain
+├── services/          ← Mock API services
+├── schemas/           ← Zod validation schemas
+├── components/        ← UI components (shadcn/ui + custom)
+├── pages/             ← Route pages
+├── layouts/           ← Layout wrappers
+└── types/             ← TypeScript type definitions
+```
+
+## Resetting Data
+
+Call `resetDb()` from `src/lib/mock-db.ts` to wipe localStorage and re-seed from `db.json`.
+
+
 
 ---
 

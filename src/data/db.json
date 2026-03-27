@@ -1,0 +1,395 @@
+{
+  "users": [
+    {
+      "id": "user_1",
+      "email": "demo@example.com",
+      "name": "Demo User",
+      "avatar_url": "",
+      "is_admin": true,
+      "is_manager": true,
+      "is_sales": false,
+      "is_ops": false,
+      "is_contractor": false,
+      "password_hash": true,
+      "created_at": "2025-01-15T10:00:00Z",
+      "updated_at": "2025-01-15T10:00:00Z"
+    }
+  ],
+  "settings": [
+    {
+      "id": "settings_1",
+      "user_id": "user_1",
+      "theme": "system",
+      "remind_email": "demo@example.com",
+      "remind_by_email_enabled": false
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_1",
+      "name": "Website Redesign",
+      "description": "Complete redesign of the company website with modern UI",
+      "status": "active",
+      "task_count": 3,
+      "created_at": "2025-02-01T09:00:00Z",
+      "updated_at": "2025-03-10T14:30:00Z",
+      "created_by_name": "Demo User"
+    },
+    {
+      "id": "proj_2",
+      "name": "Mobile App MVP",
+      "description": "Build the first version of the mobile application",
+      "status": "active",
+      "task_count": 2,
+      "created_at": "2025-03-01T10:00:00Z",
+      "updated_at": "2025-03-20T11:00:00Z",
+      "created_by_name": "Demo User"
+    }
+  ],
+  "project_tasks": [
+    {
+      "id": "ptask_1",
+      "project_id": "proj_1",
+      "title": "Design homepage mockup",
+      "description": "Create high-fidelity mockup for the new homepage",
+      "status": "done",
+      "assigned_to": "user_1",
+      "assigned_to_name": "Demo User",
+      "role_id": "role_1",
+      "role_name": "Designer",
+      "due_date": "2025-03-15",
+      "cost_rate": 75,
+      "sales_rate": 150,
+      "total_hours": 12,
+      "total_cost": 900,
+      "time_entries": [
+        { "id": "te_1", "date": "2025-03-10", "hours": 6, "description": "Initial design work", "user_name": "Demo User" },
+        { "id": "te_2", "date": "2025-03-11", "hours": 6, "description": "Revisions and polish", "user_name": "Demo User" }
+      ],
+      "notes": [
+        { "id": "note_1", "content": "Client prefers blue color scheme", "created_at": "2025-03-09T10:00:00Z", "user_name": "Demo User" }
+      ],
+      "files": []
+    },
+    {
+      "id": "ptask_2",
+      "project_id": "proj_1",
+      "title": "Implement responsive nav",
+      "description": "Build the responsive navigation component",
+      "status": "in_progress",
+      "assigned_to": "user_1",
+      "assigned_to_name": "Demo User",
+      "role_id": "role_2",
+      "role_name": "Developer",
+      "due_date": "2025-03-25",
+      "cost_rate": 85,
+      "sales_rate": 170,
+      "total_hours": 4,
+      "total_cost": 340,
+      "time_entries": [
+        { "id": "te_3", "date": "2025-03-18", "hours": 4, "description": "Navigation scaffolding", "user_name": "Demo User" }
+      ],
+      "notes": [],
+      "files": []
+    },
+    {
+      "id": "ptask_3",
+      "project_id": "proj_1",
+      "title": "Set up CI/CD pipeline",
+      "description": "Configure automated builds and deployments",
+      "status": "todo",
+      "assigned_to": null,
+      "assigned_to_name": null,
+      "role_id": "role_2",
+      "role_name": "Developer",
+      "due_date": "2025-04-01",
+      "cost_rate": 85,
+      "sales_rate": 170,
+      "total_hours": 0,
+      "total_cost": 0,
+      "time_entries": [],
+      "notes": [],
+      "files": []
+    },
+    {
+      "id": "ptask_4",
+      "project_id": "proj_2",
+      "title": "Set up React Native project",
+      "description": "Initialize the RN project with navigation and state management",
+      "status": "in_progress",
+      "assigned_to": "user_1",
+      "assigned_to_name": "Demo User",
+      "role_id": "role_2",
+      "role_name": "Developer",
+      "due_date": "2025-04-10",
+      "cost_rate": 85,
+      "sales_rate": 170,
+      "total_hours": 8,
+      "total_cost": 680,
+      "time_entries": [
+        { "id": "te_4", "date": "2025-03-20", "hours": 8, "description": "Project setup and config", "user_name": "Demo User" }
+      ],
+      "notes": [],
+      "files": []
+    },
+    {
+      "id": "ptask_5",
+      "project_id": "proj_2",
+      "title": "Design app wireframes",
+      "description": "Low-fidelity wireframes for core screens",
+      "status": "todo",
+      "assigned_to": null,
+      "assigned_to_name": null,
+      "role_id": "role_1",
+      "role_name": "Designer",
+      "due_date": "2025-04-05",
+      "cost_rate": 75,
+      "sales_rate": 150,
+      "total_hours": 0,
+      "total_cost": 0,
+      "time_entries": [],
+      "notes": [],
+      "files": []
+    }
+  ],
+  "project_assignments": [
+    {
+      "id": "assign_1",
+      "project_id": "proj_1",
+      "worker_id": "worker_1",
+      "worker_name": "Demo User",
+      "worker_email": "demo@example.com",
+      "worker_user_id": "user_1",
+      "role_id": "role_2",
+      "role_name": "Developer",
+      "cost_rate": 85,
+      "sales_rate": 170
+    }
+  ],
+  "project_roles": [
+    { "id": "role_1", "name": "Designer" },
+    { "id": "role_2", "name": "Developer" },
+    { "id": "role_3", "name": "Project Manager" },
+    { "id": "role_4", "name": "QA Engineer" }
+  ],
+  "workers": [
+    {
+      "id": "worker_1",
+      "name": "Demo User",
+      "qb_display_name": "Demo User",
+      "email": "demo@example.com",
+      "default_cost_rate": 85,
+      "default_sales_price_rate": 170
+    },
+    {
+      "id": "worker_2",
+      "name": "Jane Smith",
+      "qb_display_name": "Jane Smith",
+      "email": "jane@example.com",
+      "default_cost_rate": 75,
+      "default_sales_price_rate": 150
+    }
+  ],
+  "deals": [
+    {
+      "id": "deal_1",
+      "client": "Acme Corp",
+      "sales_task": "Enterprise license negotiation",
+      "status": "proposal",
+      "est_revenue": 50000,
+      "stakeholders": "John CEO, Sarah CTO",
+      "pending_on_user_id": "user_1",
+      "pending_on_name": "Demo User",
+      "created_at": "2025-02-10T08:00:00Z",
+      "updated_at": "2025-03-15T16:00:00Z",
+      "created_by_name": "Demo User",
+      "files": []
+    },
+    {
+      "id": "deal_2",
+      "client": "StartupXYZ",
+      "sales_task": "Pilot program setup",
+      "status": "scheduling",
+      "est_revenue": 12000,
+      "stakeholders": "Alex Founder",
+      "pending_on_user_id": null,
+      "pending_on_name": null,
+      "created_at": "2025-03-05T11:00:00Z",
+      "updated_at": "2025-03-18T09:00:00Z",
+      "created_by_name": "Demo User",
+      "files": []
+    }
+  ],
+  "leads": [
+    {
+      "id": "lead_1",
+      "name": "Bob Johnson",
+      "company": "TechCo",
+      "title": "VP of Engineering",
+      "contact_email": "bob@techco.com",
+      "phone": "555-0101",
+      "status": "hot",
+      "contact_method": "email",
+      "first_contacted_at": "2025-02-20T10:00:00Z",
+      "last_touched_at": "2025-03-15T14:00:00Z",
+      "created_at": "2025-02-20T10:00:00Z",
+      "updated_at": "2025-03-15T14:00:00Z",
+      "created_by_name": "Demo User",
+      "notes": [
+        { "id": "lnote_1", "content": "Very interested in our enterprise plan", "created_at": "2025-03-15T14:00:00Z", "created_by_name": "Demo User" }
+      ],
+      "images": []
+    },
+    {
+      "id": "lead_2",
+      "name": "Carol Williams",
+      "company": "DesignStudio",
+      "title": "Creative Director",
+      "contact_email": "carol@designstudio.com",
+      "phone": "555-0202",
+      "status": "not_contacted",
+      "contact_method": "phone",
+      "first_contacted_at": null,
+      "last_touched_at": null,
+      "created_at": "2025-03-10T09:00:00Z",
+      "updated_at": "2025-03-10T09:00:00Z",
+      "created_by_name": "Demo User",
+      "notes": [],
+      "images": []
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust_1",
+      "qb_customer_id": "qb_100",
+      "display_name": "Acme Corp",
+      "is_active": true,
+      "email": "billing@acme.com",
+      "phone": "555-1000",
+      "given_name": "John",
+      "family_name": "Doe",
+      "company_name": "Acme Corp",
+      "bill_address_line1": "123 Main St",
+      "bill_address_city": "Springfield",
+      "bill_address_state": "IL",
+      "bill_address_postal_code": "62701",
+      "balance": 5000,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-03-01T00:00:00Z",
+      "synced_at": "2025-03-20T12:00:00Z"
+    }
+  ],
+  "crm_users": [
+    { "id": "user_1", "name": "Demo User", "email": "demo@example.com" }
+  ],
+  "goals": [
+    {
+      "id": "goal_1",
+      "title": "Ship v2.0",
+      "description": "Release version 2.0 of the product with all planned features",
+      "status": "in_progress",
+      "current_step": 3,
+      "total_steps": 5
+    },
+    {
+      "id": "goal_2",
+      "title": "Hire 2 engineers",
+      "description": "Bring on two senior engineers by end of Q2",
+      "status": "in_progress",
+      "current_step": 1,
+      "total_steps": 4
+    }
+  ],
+  "goal_entries": [
+    { "id": "ge_1", "goal_id": "goal_1", "step": 1, "completed": true },
+    { "id": "ge_2", "goal_id": "goal_1", "step": 2, "completed": true },
+    { "id": "ge_3", "goal_id": "goal_1", "step": 3, "completed": true },
+    { "id": "ge_4", "goal_id": "goal_1", "step": 4, "completed": false },
+    { "id": "ge_5", "goal_id": "goal_1", "step": 5, "completed": false },
+    { "id": "ge_6", "goal_id": "goal_2", "step": 1, "completed": true },
+    { "id": "ge_7", "goal_id": "goal_2", "step": 2, "completed": false },
+    { "id": "ge_8", "goal_id": "goal_2", "step": 3, "completed": false },
+    { "id": "ge_9", "goal_id": "goal_2", "step": 4, "completed": false }
+  ],
+  "time_activities": [
+    {
+      "Id": "ta_1",
+      "TxnDate": "2025-03-20",
+      "EmployeeRef": { "value": "worker_1", "name": "Demo User" },
+      "CustomerRef": { "value": "qb_100", "name": "Acme Corp" },
+      "ItemRef": { "value": "item_1", "name": "Consulting" },
+      "Hours": 6,
+      "Minutes": 30,
+      "Description": "Sprint planning and dev work",
+      "BillableStatus": "Billable",
+      "SyncToken": "0"
+    },
+    {
+      "Id": "ta_2",
+      "TxnDate": "2025-03-21",
+      "EmployeeRef": { "value": "worker_1", "name": "Demo User" },
+      "CustomerRef": { "value": "qb_100", "name": "Acme Corp" },
+      "ItemRef": { "value": "item_2", "name": "Development" },
+      "Hours": 8,
+      "Minutes": 0,
+      "Description": "Feature implementation",
+      "BillableStatus": "Billable",
+      "SyncToken": "0"
+    }
+  ],
+  "employees": [
+    { "id": "worker_1", "name": "Demo User" },
+    { "id": "worker_2", "name": "Jane Smith" }
+  ],
+  "qb_customers": [
+    { "id": "qb_100", "name": "Acme Corp" },
+    { "id": "qb_200", "name": "StartupXYZ" }
+  ],
+  "items": [
+    { "id": "item_1", "name": "Consulting" },
+    { "id": "item_2", "name": "Development" },
+    { "id": "item_3", "name": "Design" }
+  ],
+  "time_overview": {
+    "weeks": ["2025-03-17", "2025-03-24", "2025-03-31"],
+    "customers": [
+      {
+        "qb_customer_id": "qb_100",
+        "qb_customer_name": "Acme Corp",
+        "weeks": {
+          "2025-03-17": { "forecasted": 40, "actual": 32, "variance": -8 },
+          "2025-03-24": { "forecasted": 40, "actual": 0, "variance": -40 },
+          "2025-03-31": { "forecasted": 40, "actual": 0, "variance": -40 }
+        }
+      }
+    ],
+    "connected": true
+  },
+  "tasks": [],
+  "blog_posts": [
+    {
+      "slug": "getting-started",
+      "title": "Getting Started with the Mockup Starter Pack",
+      "description": "Learn how to use this starter pack to build interactive mockups quickly.",
+      "content": "# Getting Started\n\nWelcome to the mockup starter pack! This template gives you everything you need to build interactive frontend mockups with persistent data.\n\n## How it works\n\nAll data lives in `src/data/db.json`. The mock database loads this as seed data and persists changes to localStorage.\n\nYou get full CRUD operations, React Query integration, and realistic async behavior — no backend required.",
+      "date": "2025-03-01",
+      "author": "Demo",
+      "tags": ["guide", "getting-started"]
+    }
+  ],
+  "docs": {
+    "default": {
+      "page": {
+        "title": "Documentation",
+        "content": "# Welcome\n\nThis is the documentation for your mockup application. Edit `db.json` to change this content."
+      },
+      "tree": [
+        { "slug": "default", "title": "Welcome", "children": [] }
+      ]
+    }
+  },
+  "legal": {
+    "terms": { "title": "Terms of Service", "content": "# Terms of Service\n\nPlaceholder terms of service content." },
+    "privacy": { "title": "Privacy Policy", "content": "# Privacy Policy\n\nPlaceholder privacy policy content." }
+  }
+}

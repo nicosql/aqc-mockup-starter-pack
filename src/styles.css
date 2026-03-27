@@ -1,0 +1,250 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-excali-blue: #a5d8ff;
+  --color-excali-green: #b2f2bb;
+  --color-excali-yellow: #ffec99;
+  --color-excali-pink: #fcc2d7;
+  --color-excali-orange: #ffd8a8;
+  --color-excali-violet: #d0bfff;
+
+  --background-image-gradient-primary: var(--gradient-primary);
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-hand: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Virgil';
+    src: url('/fonts/virgil.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Inter';
+    src: url('/fonts/inter-regular.woff2') format('woff2');
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  :root {
+    --font-sans: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+
+    --background: 43 45% 98%;
+    --foreground: 225 10% 18%;
+    --card: 43 30% 96%;
+    --card-foreground: 225 10% 15%;
+    --popover: 43 30% 97%;
+    --popover-foreground: 225 10% 15%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 43 20% 90%;
+    --secondary-foreground: 225 10% 20%;
+    --muted: 43 15% 92%;
+    --muted-foreground: 225 5% 45%;
+    --accent: 43 20% 93%;
+    --accent-foreground: 225 10% 15%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 225 10% 78%;
+    --input: 225 10% 82%;
+    --ring: 220 60% 60%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --font-sans: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+
+    --background: 230 12% 11%;
+    --foreground: 43 10% 82%;
+    --card: 230 10% 14%;
+    --card-foreground: 43 10% 90%;
+    --popover: 230 10% 13%;
+    --popover-foreground: 43 10% 90%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 230 10% 20%;
+    --secondary-foreground: 43 10% 90%;
+    --muted: 230 8% 22%;
+    --muted-foreground: 43 5% 50%;
+    --accent: 230 8% 22%;
+    --accent-foreground: 43 10% 90%;
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 230 8% 22%;
+    --input: 230 8% 25%;
+    --ring: 220 60% 55%;
+    --radius: 0.75rem;
+
+    ::selection {
+      color: #fff;
+      background: hsl(220 70% 55%);
+    }
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-feature-settings: normal;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    /* Excalidraw-style cross-dot grid */
+    background-image: radial-gradient(circle, hsl(225 10% 60% / 0.18) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .dark body {
+    background-image: radial-gradient(circle, hsl(43 10% 50% / 0.1) 1px, transparent 1px);
+  }
+
+  input::placeholder {
+    @apply select-none;
+    font-family: var(--font-sans);
+  }
+
+  input[type='file']::-webkit-file-upload-button,
+  input[type='file']::file-selector-button {
+    @apply text-foreground;
+  }
+
+  /* Hand-drawn style borders using rough box-shadows */
+  .sketchy {
+    border: 2px solid hsl(var(--foreground));
+    border-radius: 3px;
+    box-shadow:
+      1px 1px 0 hsl(var(--foreground) / 0.15),
+      -1px -1px 0 hsl(var(--foreground) / 0.05);
+  }
+
+  .sketchy-card {
+    border: 2px solid hsl(var(--border));
+    border-radius: 8px;
+    box-shadow:
+      2px 2px 0 hsl(var(--foreground) / 0.08),
+      -1px -1px 0 hsl(var(--foreground) / 0.03);
+    background: hsl(var(--card));
+    transition: box-shadow 0.15s ease;
+  }
+
+  .sketchy-card:hover {
+    box-shadow:
+      3px 3px 0 hsl(var(--foreground) / 0.12),
+      -1px -1px 0 hsl(var(--foreground) / 0.05);
+  }
+
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 50;
+    width: 50px;
+    --b: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 1px;
+    background: conic-gradient(#0000 10%, hsl(var(--primary))) content-box;
+    -webkit-mask:
+      repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+      radial-gradient(
+        farthest-side,
+        #0000 calc(100% - var(--b) - 1px),
+        #000 calc(100% - var(--b))
+      );
+    mask:
+      repeating-conic-gradient(#0000 0deg, #000 1deg 20deg, #0000 21deg 36deg),
+      radial-gradient(
+        farthest-side,
+        #0000 calc(100% - var(--b) - 1px),
+        #000 calc(100% - var(--b))
+      );
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: spin 1s infinite steps(10);
+  }
+
+  @keyframes spin {
+    to {
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}

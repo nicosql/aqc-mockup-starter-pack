@@ -21,18 +21,18 @@ For features that would normally need a real API (AI calls, file uploads, paymen
 
 ## Getting Started -Windows Setup Guide
 
-### 1. Install Node.js
+### 1. Install bun
 
-1. Go to https://nodejs.org and download the **LTS** installer for Windows
-2. Run the installer — accept the defaults and make sure **"Add to PATH"** is checked
-3. Restart any open terminals, then verify the installation:
+1. open powershell
+2. run the following command:
 
 ```powershell
-node --version
-npm --version
+powershell -c "irm bun.sh/install.ps1 | iex"
 ```
-
-Both commands should print a version number (e.g. `v22.x.x` and `10.x.x`).
+open a new powershell window and verify the installation:
+```powershell
+bun --version
+```
 
 ### 2. Install Git
 
@@ -53,7 +53,7 @@ This should print something like `git version 2.x.x.windows.x`.
 ```powershell
 git clone https://github.com/nicosql/aqc-mockup-starter-pack.git
 cd aqc-mockup-starter-pack
-npm install
+bun i
 npm run dev
 ```
 

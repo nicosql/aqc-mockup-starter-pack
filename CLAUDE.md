@@ -102,10 +102,10 @@ Call `resetDb()` from `src/lib/mock-db.ts` to wipe localStorage and re-seed from
 ## Development
 
 ```bash
-npm install
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run lint     # Type check + ESLint
+bun install
+bun run dev      # Start dev server
+bun run build    # Production build
+bun run lint     # Type check + ESLint
 ```
 
 ## Style Guidelines

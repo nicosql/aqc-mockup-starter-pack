@@ -38,7 +38,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-  --font-hand: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+  --font-hand: 'Inter', system-ui, -apple-system, sans-serif;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
@@ -80,57 +80,57 @@
   }
 
   :root {
-    --font-sans: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-    --background: 43 45% 98%;
-    --foreground: 225 10% 18%;
-    --card: 43 30% 96%;
-    --card-foreground: 225 10% 15%;
-    --popover: 43 30% 97%;
-    --popover-foreground: 225 10% 15%;
-    --primary: 220 70% 55%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 0 0% 5%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 43 20% 90%;
-    --secondary-foreground: 225 10% 20%;
-    --muted: 43 15% 92%;
-    --muted-foreground: 225 5% 45%;
-    --accent: 43 20% 93%;
-    --accent-foreground: 225 10% 15%;
-    --destructive: 0 65% 55%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 85% 50%;
     --destructive-foreground: 0 0% 100%;
-    --border: 225 10% 78%;
-    --input: 225 10% 82%;
-    --ring: 220 60% 60%;
-    --radius: 0.75rem;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 5%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --font-sans: 'Virgil', 'Segoe Print', 'Bradley Hand', cursive;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-    --background: 230 12% 11%;
-    --foreground: 43 10% 82%;
-    --card: 230 10% 14%;
-    --card-foreground: 43 10% 90%;
-    --popover: 230 10% 13%;
-    --popover-foreground: 43 10% 90%;
-    --primary: 220 70% 55%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 230 10% 20%;
-    --secondary-foreground: 43 10% 90%;
-    --muted: 230 8% 22%;
-    --muted-foreground: 43 5% 50%;
-    --accent: 230 8% 22%;
-    --accent-foreground: 43 10% 90%;
-    --destructive: 0 65% 55%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 5%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 14%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
-    --border: 230 8% 22%;
-    --input: 230 8% 25%;
-    --ring: 220 60% 55%;
-    --radius: 0.75rem;
+    --border: 0 0% 80%;
+    --input: 0 0% 80%;
+    --ring: 0 0% 95%;
+    --radius: 0.5rem;
 
     ::selection {
-      color: #fff;
-      background: hsl(220 70% 55%);
+      color: #000;
+      background: hsl(0 0% 95%);
     }
   }
 
@@ -147,9 +147,9 @@
   }
 
   html {
-    font-feature-settings: normal;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
@@ -157,13 +157,6 @@
     font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.6;
-    /* Excalidraw-style cross-dot grid */
-    background-image: radial-gradient(circle, hsl(225 10% 60% / 0.18) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-
-  .dark body {
-    background-image: radial-gradient(circle, hsl(43 10% 50% / 0.1) 1px, transparent 1px);
   }
 
   input::placeholder {
@@ -176,29 +169,20 @@
     @apply text-foreground;
   }
 
-  /* Hand-drawn style borders using rough box-shadows */
   .sketchy {
-    border: 2px solid hsl(var(--foreground));
-    border-radius: 3px;
-    box-shadow:
-      1px 1px 0 hsl(var(--foreground) / 0.15),
-      -1px -1px 0 hsl(var(--foreground) / 0.05);
+    border: 2px solid hsl(var(--border));
+    border-radius: var(--radius-sm);
   }
 
   .sketchy-card {
     border: 2px solid hsl(var(--border));
-    border-radius: 8px;
-    box-shadow:
-      2px 2px 0 hsl(var(--foreground) / 0.08),
-      -1px -1px 0 hsl(var(--foreground) / 0.03);
+    border-radius: var(--radius-md);
     background: hsl(var(--card));
-    transition: box-shadow 0.15s ease;
+    transition: border-color 0.15s ease;
   }
 
   .sketchy-card:hover {
-    box-shadow:
-      3px 3px 0 hsl(var(--foreground) / 0.12),
-      -1px -1px 0 hsl(var(--foreground) / 0.05);
+    border-color: hsl(var(--foreground));
   }
 
   .spinner {
